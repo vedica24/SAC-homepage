@@ -1,3 +1,30 @@
+
+ // Preloader
+  $(window).on('load', function() {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('fast', function() {
+        $(this).remove();
+      });
+    }
+  });
+
+
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('.back-to-top').fadeIn(); 
+        } else { 
+            $('.back-to-top').fadeOut(); 
+        } 
+    }); 
+    $('.back-to-top').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+
+
+  
  gsap.from('.section2 h2', {
           scrollTrigger: {
             trigger: '.section2 h2',
